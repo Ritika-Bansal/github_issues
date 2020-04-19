@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.text.Html"/>
+
+        <variable
+            name="issues"
+            type="com.gamechange.issues.models.Issues" />
+
+        <variable
+            name="callback"
+            type="com.gamechange.issues.callback.ListItemClickCallback" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> callback.onClick(issues)}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_issue_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{issues.title}"
+                android:textColor="#000"
+                android:layout_marginBottom="2dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_issue_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLength="140"
+                android:layout_marginBottom="8dp"
+                android:text="@{Html.fromHtml(issues.body)}"
+                android:textColor="#979797"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:alpha="0.1"
+            android:background="#878787" />
+
+    </LinearLayout>
+
+</layout>
