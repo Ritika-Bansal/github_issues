@@ -1,4 +1,4 @@
-package com.gamechange.issues;
+package com.gamechange.issues.service;
 
 import android.util.Log;
 

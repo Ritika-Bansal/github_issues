@@ -3,7 +3,6 @@ package com.gamechange.issues.service;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.gamechange.issues.DateDeserializer;
 import com.gamechange.issues.models.Comment;
 import com.gamechange.issues.models.Issues;
 import com.google.gson.Gson;
